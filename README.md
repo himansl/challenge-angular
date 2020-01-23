@@ -1,27 +1,30 @@
-# ChallengeAngular
+# Challenge Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.3.
+Welcome to the coding challenge of Shortlist.
+This test is designed to assess your thinking process and it is something that'll be working on a daily basis along with your possible peers.
+
+Imagine a scenario where the frontend developers are busy on critical release and setup this project but had to leave midway. The project is a candidate review portal, where you can add a candidate, view the candidates list in a nice tabular format and view the candidate profile by clicking on a row.
+
+You're hired as a temporary contractor to finish the project.
+
+Tasks:
+1. Ability to add a candidate.
+2. Ability to view the candidate, preferably on a new route.
+3. Ability to sort the table by Name and Experience.
+
+Bonus points:
+ - If you can restructure the application to be scalable and maintainable.
+ - Add lazy loading to the modules.
+
+You're free to choose any design framework, but we'd prefer if you choose Material Design (`https://material.angular.io`) since most of our products are designed using this library.
+
+You install new package using npm.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Run `npm run server` to start the json server
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Submission
+Create a new branch and raise a Pull Request with your changes. Please mention your email ID when raising a PR.
