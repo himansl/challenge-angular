@@ -1,9 +1,12 @@
 # Challenge Angular
 
-Welcome to the coding challenge of Shortlist.
+Welcome to the coding challenge of Shortlist. 
+Shortlist believes in assessments being as close as possible to your on the job requirements.
 This test is designed to assess your thinking process and it is something that'll be working on a daily basis along with your possible peers.
 
-Imagine a scenario where the frontend developers are busy on critical release and setup this project but had to leave midway. The project is a candidate review portal, where you can add a candidate, view the candidates list in a nice tabular format and view the candidate profile by clicking on a row.
+Imagine a scenario where the frontend developers setup this project but had to leave midway and are busy working on a critical release. 
+
+The project is a candidate review portal, where you can add a candidate, view the candidates list in a nice tabular format and view the candidate profile by clicking on a row.
 
 You're hired as a temporary contractor to finish the project.
 
@@ -18,7 +21,9 @@ Bonus points:
 
 You're free to choose any design framework, but we'd prefer if you choose Material Design (`https://material.angular.io`) since most of our products are designed using this library.
 
-You install new package using npm.
+You install new packages using npm.
+
+Design images are included in the assets folder. Try to keep UI as close to the assets as possible.
 
 ## Development server
 
