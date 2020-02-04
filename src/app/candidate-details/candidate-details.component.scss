@@ -1,0 +1,57 @@
+@import '../../styles.scss';
+main {
+  min-width: 22vw;
+  padding: 2vh 0;
+  display: flex;
+  color: $dark-font-color;
+  font-size: 1.3em;
+
+  & > #photo-container {
+    flex: 1;
+
+    & > #profilepic {
+      height: 12vh;
+      width: 12vh;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+  & > #content {
+    flex: 4;
+    margin-left: 24px;
+
+    & > header h1 {
+      font-size: 1.6em;
+      font-weight: weightCalculation(6);
+      letter-spacing: 2px;
+      color: $candidate-header-color;
+      margin-bottom: 2vh;
+    }
+  }
+
+  & .info-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 1.5vh;
+    column-gap: 1.5vw;
+
+    & > .info-chip {
+      display: flex;
+      align-items: center;
+
+      & > span {
+        margin-left: 0.5vw;
+      }
+    }
+  }
+}
+
+mat-divider {
+  margin: 2vh 0 3vh 0;
+}
+mat-icon {
+  color: $font-color;
+}
+mat-check-box {
+  cursor: pointer;
+}

@@ -1,0 +1,55 @@
+<header class="mat-typography">
+  <h1>
+    All Candidates
+  </h1>
+</header>
+<main>
+  <mat-sidenav-container class="container">
+    <div>
+      <table mat-table [dataSource]="candidatesList" matSort class="mat-elevation-z8">
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef class="headerCell">
+            <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+              [indeterminate]="selection.hasValue() && !isAllSelected()">
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+              [checked]="selection.isSelected(row)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="headerCell">
+            Name
+          </th>
+          <td mat-cell *matCellDef="let element" class="rowNameCell clickable-cell">{{ element.name }}</td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef class="headerCell">Email</th>
+          <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+        </ng-container>
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef class="headerCell">Phone No</th>
+          <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+        </ng-container>
+        <ng-container matColumnDef="experience">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="headerCell">
+            Experience
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.experience }} years</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)='showDetails(row)'></tr>
+      </table>
+    </div>
+    <mat-sidenav opened mode="side" position="end">
+      <button mat-flat-button color="accent" routerLink="/new">Add Candidate</button>
+      <button mat-flat-button color="primary" *ngIf='selection.selected.length == 1' (click)='updateCandidate()'>Update
+        Candidate</button>
+      <button mat-flat-button color="warn" *ngIf='selection.selected.length >0' (click)='deleteCandidates()'>Delete
+        Candidate</button>
+    </mat-sidenav>
+  </mat-sidenav-container>
+</main>

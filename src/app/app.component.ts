@@ -1,15 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
-interface Candidate {
-  id: number,
-  name: string,
-  email: string,
-  phone: number,
-  experience: number,
-  photo: string,
-  github: string
-}
+import { DataService } from './services/data.service';
+import { Candidate } from './models/candidate';
 
 @Component({
   selector: 'app-root',
@@ -18,14 +9,11 @@ interface Candidate {
 })
 export class AppComponent implements OnInit {
   title = 'challenge-angular';
-
-  candidatesList: Array<Candidate>
-  constructor(
-    private _http: HttpClient
-  ) {}
+  candidatesList: Array<Candidate>;
+  constructor(private data: DataService) {}
 
   ngOnInit() {
-    this._http.get('http://localhost:3001/candidates').subscribe((candidatesList: Array<Candidate>) => {
+    this.data.getCandidates().subscribe((candidatesList: Array<Candidate>) => {
       this.candidatesList = candidatesList;
     });
   }
