@@ -1,0 +1,29 @@
+<main class="mat-typography">
+  <div id='photo-container'>
+    <img [src]="photo" alt="photo" id="profilepic" />
+  </div>
+  <div id='content'>
+    <header>
+      <h1>{{ name }}</h1>
+    </header>
+    <section mat-dialog-content>
+      <div class="info-grid">
+        <span class="info-chip">
+          <mat-icon>smartphone</mat-icon> <span>+{{countryCode}} - {{ phone }}</span>
+        </span>
+        <span class="info-chip">
+          <mat-icon>email</mat-icon><span>{{ email }}</span>
+        </span>
+        <span class="info-chip" *ngIf='github'>
+          <mat-icon>merge_type</mat-icon><span>{{ github }}</span>
+        </span>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="info-grid">
+        <span class="info-chip">
+          <mat-icon>work</mat-icon><span>{{ experience }} years</span>
+        </span>
+      </div>
+    </section>
+  </div>
+</main>

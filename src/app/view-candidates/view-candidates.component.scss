@@ -1,0 +1,78 @@
+@import '../../styles.scss';
+
+main {
+  @include displayFlex;
+}
+
+header {
+  margin: 10vh 0;
+  padding: 0 2vw;
+  display: flex;
+  justify-content: space-between;
+  & h1 {
+    width: $common-width;
+    font-size: 2em;
+    text-align: center;
+  }
+}
+
+mat-sidenav {
+  padding: $basic-viewport-width;
+  width: 20vw;
+  &-container {
+    width: $common-width;
+    height: 70vh;
+    min-height: 20vh;
+  }
+  &-content {
+    height: $table-content-height;
+    overflow: auto;
+  }
+  button {
+    width: 15vw;
+    margin-left: $basic-viewport-width;
+    margin-bottom: 2vh;
+    font-size: $button-font-size;
+    padding: $basic-viewport-height $basic-viewport-width;
+  }
+}
+
+table {
+  width: $common-width;
+  th,
+  td {
+    font-size: $basic-font-size;
+    color: $color-text-table;
+  }
+  td {
+    &.rowNameCell {
+      color: $color-text-name;
+      font-weight: weightCalculation(5);
+    }
+  }
+  th {
+    &.headerCell {
+      background-color: $row-background-color;
+      font-weight: weightCalculation(5);
+      color: $color-text-table;
+      box-shadow: 10px 0px 15px 0px $color-box-shadow;
+    }
+    &.mat-header-row {
+      background-color: $color-table-header-primary;
+    }
+  }
+}
+
+[mat-row] {
+  cursor: pointer;
+  height: $row-height;
+
+  &:hover {
+    background: $row-background-color;
+  }
+}
+
+.clickable-cell {
+  color: $color-clickable-cell;
+  text-shadow: none;
+}

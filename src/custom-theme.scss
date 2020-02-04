@@ -1,0 +1,43 @@
+@import '~@angular/material/theming';
+
+$mat-custom-teal: (
+  50: hsl(179, 70%, 90%),
+  100: hsl(179, 70%, 80%),
+  200: hsl(179, 70%, 70%),
+  300: hsl(180, 70%, 56%),
+  400: hsl(183, 72%, 50%),
+  500: hsl(183, 72%, 46%),
+  600: hsl(183, 72%, 42%),
+  700: hsl(184, 76%, 36%),
+  800: hsl(184, 76%, 28%),
+  900: hsl(184, 76%, 23%),
+  A100: hsl(166, 100%, 83%),
+  A200: hsl(166, 100%, 70%),
+  A400: hsl(165, 82%, 51%),
+  A700: hsl(172, 100%, 37%),
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text
+  )
+);
+$cdk-overlay-dark-backdrop-background: rgb(96, 125, 139, 0.5);
+@include mat-core();
+
+$primary-color: mat-palette($mat-blue-grey, 400);
+$accent-color: mat-palette($mat-custom-teal);
+
+$theme: mat-light-theme($primary-color, $accent-color);
+
+@include angular-material-theme($theme);
