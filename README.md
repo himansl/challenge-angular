@@ -8,12 +8,13 @@ Imagine a scenario where the frontend developers setup this project but had to l
 
 The project is a candidate review portal, where you can add a candidate, view the candidates list in a nice tabular format and view the candidate profile by clicking on a row.
 
-You're hired as a temporary contractor to finish the project.
+You're hired as a temporary contractor to finish the project. Fix any bugs that might encounter
 
 Tasks:
 1. Ability to add a candidate.
 2. Ability to view the candidate, preferably on a new route.
 3. Ability to sort the table by Name and Experience.
+4. Data should be updated in the db.json file and values should persist even after refresh.
 
 Bonus points:
  - If you can restructure the application to be scalable and maintainable.
