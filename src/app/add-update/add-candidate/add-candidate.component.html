@@ -1,0 +1,53 @@
+<header class="mat-typography">
+  <button mat-button routerLink="../">
+    <mat-icon> keyboard_backspace </mat-icon> <span class="back-btn">GO BACK</span>
+  </button>
+  <h1>
+    Add Candidate
+  </h1>
+  <span class="fill-space"></span>
+</header>
+<main>
+  <form [formGroup]='candidateForm' (ngSubmit)='submitForm()'>
+    <input type='file' id='picUpload' #file (change)='photoChange(file.files)'>
+    <div id='uploadBtn' (click)='openFileUploadDialog()' *ngIf='!profilePic'><span>Upload</span></div>
+    <img [src]="profilePic" alt='ProfilePic' id='profile-pic' *ngIf='profilePic' (click)='openFileUploadDialog()'>
+    <mat-form-field appearance='outline'>
+      <mat-label>Name</mat-label>
+      <input matInput type="text" placeholder="Name" formControlName='name' required>
+      <mat-error>Name is required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance='outline'>
+      <mat-label>Email</mat-label>
+      <input matInput type="text" placeholder="Email Address" formControlName="email" required />
+      <mat-error *ngIf="candidateForm.get('email').hasError('required')">Email Address is required</mat-error>
+      <mat-error *ngIf="candidateForm.get('email').hasError('email')">Invalid Email</mat-error>
+    </mat-form-field>
+    <div class='row'>
+      <mat-form-field appearance='outline' id='countrycode'>
+        <mat-label>Code</mat-label>
+        <mat-select placeholder='--' formControlName='countryCode'>
+          <mat-option *ngFor='let country of countryCodes' [value]='country.code'>
+            +{{country.code}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline" id="phone">
+        <mat-label>Phone</mat-label>
+        <input matInput type="text" placeholder="Phone No." formControlName='phone' required>
+        <mat-error *ngIf="candidateForm.get('phone').hasError('required')">Phone Number is required</mat-error>
+        <mat-error *ngIf="candidateForm.get('phone').hasError('pattern')">Invalid Phone Number</mat-error>
+      </mat-form-field>
+    </div>
+
+    <mat-label>Experience</mat-label>
+    <mat-slider thumbLabel tickInterval="1" min="0" max="20" step="1" formControlName='experience'></mat-slider>
+
+    <mat-form-field appearance='outline'>
+      <mat-label>GitHub</mat-label>
+      <input matInput type="text" placeholder="GitHub" formControlName='github'>
+    </mat-form-field>
+
+    <button mat-flat-button [disabled]="candidateForm.invalid" color="accent">
+      Submit
+    </button>
+  </form>
