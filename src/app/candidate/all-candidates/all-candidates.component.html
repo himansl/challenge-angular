@@ -1,0 +1,61 @@
+<main>
+  <table mat-table [dataSource]="candidateData" matSort class="mat-elevation-z8">
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox
+          (change)="$event ? masterToggle() : null"
+          [checked]="selection.hasValue() && isAllSelected()"
+          [indeterminate]="selection.hasValue() && !isAllSelected()"
+          [aria-label]="checkboxLabel()"
+        >
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox
+          (click)="$event.stopPropagation()"
+          (change)="$event ? selection.toggle(row) : null"
+          [checked]="selection.isSelected(row)"
+          [aria-label]="checkboxLabel(row)"
+        >
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let candidate">{{ candidate.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let candidate">{{ candidate.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef>Phone</th>
+      <td mat-cell *matCellDef="let candidate">{{ candidate.phone }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="experience">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef>Experience</th>
+      <td mat-cell *matCellDef="let candidate">{{ candidate.experience }} years</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="tableColumnsArr; sticky: true"></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: tableColumnsArr"
+      [routerLink]="['profile', row.id]"
+      (click)="selection.toggle(row)"
+    ></tr>
+  </table>
+
+  <div *ngIf="displayNothing" class="nothingToDisplay">
+    <h3>Nothing to display. Add Candidates first</h3>
+  </div>
+
+  <div>
+    <button mat-raised-button color="primary" [routerLink]="'new-candidate'">Add Candidate</button>
+  </div>
+</main>

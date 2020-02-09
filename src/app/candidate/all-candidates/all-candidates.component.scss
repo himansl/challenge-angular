@@ -1,0 +1,21 @@
+.nothingToDisplay {
+  width: 88%;
+}
+
+table {
+  width: 100%;
+  margin-left: 2vh;
+}
+main {
+  display: flex;
+  justify-content: space-between;
+}
+button {
+  margin-right: 10vh;
+  width: 100%;
+  margin-top: 0;
+  padding: 1vh;
+}
+th.mat-sort-header-sorted {
+  color: black;
+}
