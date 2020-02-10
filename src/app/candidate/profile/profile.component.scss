@@ -1,0 +1,26 @@
+main {
+  display: flex;
+  justify-content: flex-start;
+}
+.imageContainer {
+  width: 20%;
+}
+img {
+  height: 15vh;
+  width: 15vh;
+}
+.container {
+  width: 80%;
+  margin: 0 2vh 2vh 3vh;
+}
+.gridContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+h1 {
+  margin-block-start: 0;
+}
+span {
+  display: inline-block;
+  padding: 1vh;
+}

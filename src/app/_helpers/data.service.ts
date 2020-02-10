@@ -14,7 +14,7 @@ export class DataService {
         email: 'himan@abc.xyz',
         phone: 1234567890,
         experience: 4.5,
-        photo: 'assets/profile_pic_default.jpg',
+        photo: './assets/profile_pic_default.png',
         github: 'https://www.github.com/him123'
       }
     ]

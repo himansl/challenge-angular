@@ -1,0 +1,30 @@
+<main>
+  <div class="imageContainer">
+    <img [src]="profileData.photo" alt="Profile Photo" />
+  </div>
+
+  <div class="container">
+    <h1>{{ profileData.name }}</h1>
+
+    <div class="gridContainer">
+      <div>
+        <fa-icon [icon]="faEnvelope"></fa-icon>
+        <span>{{ profileData.email }}</span>
+      </div>
+
+      <div>
+        <fa-icon [icon]="faMobileAlt"></fa-icon>
+        <span>{{ profileData.phone }}</span>
+      </div>
+      <div>
+        <i class="fab fa-github"></i>
+        <span>{{ profileData.github }}</span>
+      </div>
+    </div>
+    <hr />
+    <div>
+      <fa-icon [icon]="faBriefcase"></fa-icon>
+      <span>{{ profileData.experience }}</span>
+    </div>
+  </div>
+</main>

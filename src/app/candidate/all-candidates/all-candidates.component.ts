@@ -4,6 +4,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { DataService } from 'src/app/_helpers/data.service';
 import { SelectionModel } from '@angular/cdk/collections';
 import { CandidateElement } from 'src/app/_helpers/candidate-interface';
+import { MatDialog } from '@angular/material/dialog';
+import { ProfileComponent } from '../profile/profile.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'shortlist-all-candidates',
@@ -14,11 +17,23 @@ export class AllCandidatesComponent implements OnInit {
   displayNothing = false;
   tableColumnsArr = [];
   candidateData;
+  routeQueryParams;
   selection = new SelectionModel<CandidateElement>(true, []);
 
-  constructor(private dataService: DataService) {
+  constructor(
+    private dataService: DataService,
+    private dialog: MatDialog,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {
     this.candidateData = [];
-    this.tableColumnsArr = ['name', 'email', 'phone', 'experience'];
+    this.tableColumnsArr = ['select', 'name', 'email', 'phone', 'experience'];
+    this.activatedRoute.queryParamMap.subscribe(params => {
+      if (params.get('dialog')) {
+        let id = +params.get('id');
+        this.openDialog(id);
+      }
+    });
   }
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -49,6 +64,19 @@ export class AllCandidatesComponent implements OnInit {
     if (!row) {
       return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
     }
-    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position +
+      1}`;
+  }
+
+  openDialog(id): void {
+    const dialogRef = this.dialog.open(ProfileComponent, {
+      width: '700px',
+      data: { id: id }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.router.navigate(['.'], { relativeTo: this.activatedRoute });
+      console.log('The dialog was closed');
+    });
   }
 }

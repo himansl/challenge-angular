@@ -52,3 +52,6 @@ button {
   height: 5vh;
   cursor: pointer;
 }
+button:disabled {
+  cursor: not-allowed;
+}

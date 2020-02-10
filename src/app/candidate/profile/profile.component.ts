@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Inject } from '@angular/core';
 import { DataService } from 'src/app/_helpers/data.service';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CandidateElement } from 'src/app/_helpers/candidate-interface';
+import { faMobileAlt, faEnvelope, faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import {} from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'shortlist-profile',
@@ -8,14 +11,21 @@ import { DataService } from 'src/app/_helpers/data.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  constructor(private activatedRoute: ActivatedRoute, private dataService: DataService) {}
+  dataInput;
+  faMobileAlt = faMobileAlt;
+  faEnvelope = faEnvelope;
+  faBriefcase = faBriefcase;
+  constructor(
+    private dataService: DataService,
+    private dialogRef: MatDialogRef<CandidateElement>,
+    @Inject(MAT_DIALOG_DATA) data
+  ) {
+    this.dataInput = data.id;
+  }
   profileData;
   id;
   ngOnInit() {
-    this.activatedRoute.paramMap.subscribe(el => {
-      this.id = +el.get('id');
-      this.profileData = this.dataService.getDataById(this.id);
-      console.log(this.profileData);
-    });
+    this.profileData = this.dataService.getDataById(this.dataInput);
+    console.log(this.profileData);
   }
 }
