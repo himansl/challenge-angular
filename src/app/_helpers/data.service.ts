@@ -5,31 +5,20 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  candidateObj = {
-    candidates: [
-      {
-        id: 1,
-        candidateId: 1,
-        name: 'Himan',
-        email: 'himan@abc.xyz',
-        phone: 1234567890,
-        experience: 4.5,
-        photo: './assets/profile_pic_default.png',
-        github: 'https://www.github.com/him123'
-      }
-    ]
-  };
-
   dataChangeSubject: Subject<any>;
   constructor(private http: HttpClient) {
     let data = localStorage.getItem('candidatesData');
+
     if (!data) {
-      let candidatesData = this.candidateObj['candidates'];
-      localStorage.setItem('candidatesData', JSON.stringify(candidatesData));
+      //let candidatesData = this.candidateObj['candidates'];
+      // localStorage.setItem('candidatesData', JSON.stringify(candidatesData));
     }
   }
 
   getData() {
+    this.http.get('https://localhost:3001/candidates').subscribe(el => {
+      console.log(el);
+    });
     let data = localStorage.getItem('candidatesData');
     if (data) return JSON.parse(data);
     else return JSON.parse('');
@@ -64,7 +53,7 @@ export class DataService {
       email: value['email'],
       phone: phone,
       experience: value['experience'],
-      photo: 'assets/profile_pic_default.jpg',
+      photo: value['photo'],
       github: value['github']
     };
   }

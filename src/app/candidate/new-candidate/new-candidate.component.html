@@ -7,6 +7,18 @@
   <section>
     <header>Add Candidate</header>
     <form [formGroup]="newCandidateForm" class="candidate-field-form">
+      <label
+        *ngIf="!selectedFile"
+        class="picUpload"
+        id="picUploadLabel"
+        (click)="onUpload()"
+        for="dp"
+      >
+        Upload
+      </label>
+      <img *ngIf="selectedFile" for="dp" id="picUploadImage" />
+      <input type="file" name="dp" id="dp" (change)="onFileSelected($event)" hidden />
+
       <mat-form-field class="candidate-field-full-width">
         <input matInput formControlName="name" placeholder="Enter name" />
         <mat-error *ngIf="name.touched && name.hasError('required')"

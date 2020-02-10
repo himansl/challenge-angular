@@ -1,28 +1,55 @@
-.nothingToDisplay {
-  width: 88%;
-}
+@import '../../../styles.scss';
 
-table {
-  width: 100%;
-  margin-left: 2vh;
-}
 main {
   display: flex;
   justify-content: space-between;
-}
-button {
-  margin-right: 10vh;
-  width: 100%;
-  margin-top: 0;
-  padding: 1vh;
-}
-th.mat-sort-header-sorted {
-  color: black;
-}
+  height: 78vh;
+  width: $complete-width;
+  overflow: auto;
+  overflow-x: hidden;
 
-mat-header-cell {
-  background-color: rgb(158, 158, 158);
-}
-.sidebar {
-  padding: 0 2vh;
+  & > table {
+    width: $complete-width;
+    height: 20%;
+    & > tr {
+      color: $color-text-primary;
+
+      &:hover {
+        background-color: $color-row-hover;
+      }
+    }
+
+    th.mat-sort-header-sorted {
+      color: $color-black;
+    }
+
+    td.mat-cell {
+      font-size: $viewport-2;
+    }
+
+    .mat-header-cell {
+      color: $color-black;
+      background-color: $color-accent;
+      font-size: $viewport-2;
+    }
+    & .nameColumn {
+      color: $color-primary;
+      font-weight: 500;
+    }
+  }
+  & > .nothingToDisplay {
+    width: 88%;
+  }
+  & > .sidebar {
+    padding: 0 $viewport-2;
+
+    & > button {
+      background-color: $color-primary;
+      color: $color-white;
+      margin-right: 10vh;
+      width: $complete-width;
+      margin-top: 0;
+      padding: 1vh;
+    }
+  }
 }

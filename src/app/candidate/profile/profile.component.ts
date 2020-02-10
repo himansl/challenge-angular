@@ -26,6 +26,6 @@ export class ProfileComponent implements OnInit {
   id;
   ngOnInit() {
     this.profileData = this.dataService.getDataById(this.dataInput);
-    console.log(this.profileData);
+    document.getElementById('profilePhoto').setAttribute('src', this.profileData.photo);
   }
 }

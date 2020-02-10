@@ -1,6 +1,6 @@
 <main>
   <div class="imageContainer">
-    <img [src]="profileData.photo" alt="Profile Photo" />
+    <img id="profilePhoto" alt="Profile Photo" />
   </div>
 
   <div class="container">
@@ -14,7 +14,7 @@
 
       <div>
         <fa-icon [icon]="faMobileAlt"></fa-icon>
-        <span>{{ profileData.phone }}</span>
+        <span>+{{ profileData.phone }}</span>
       </div>
       <div>
         <i class="fab fa-github"></i>
