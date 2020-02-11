@@ -1,7 +1,12 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { DataService } from 'src/app/_collaborators/data.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { faMobileAlt, faEnvelope, faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import {
+  faMobileAlt,
+  faEnvelope,
+  faBriefcase,
+  faCat
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'shortlist-profile',
@@ -13,6 +18,7 @@ export class ProfileComponent implements OnInit {
   faMobileAlt = faMobileAlt;
   faEnvelope = faEnvelope;
   faBriefcase = faBriefcase;
+  faCat = faCat;
   constructor(private dataService: DataService, @Inject(MAT_DIALOG_DATA) data) {
     this.dataId = data.id;
   }
