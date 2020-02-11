@@ -1,22 +1,5 @@
-<h1>Shortlist Candidates</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Experience</th>
-      <th>Github</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let candidate of candidatesList">
-      <td>{{candidate.name}}</td>
-      <td>{{candidate.email}}</td>
-      <td>{{candidate.phone}}</td>
-      <td>{{candidate.experience}}</td>
-      <td>{{candidate.github}}</td>
-    </tr>
-  </tbody>
-</table>
+<main>
+  <shortlist-header></shortlist-header>
+  <router-outlet></router-outlet>
+  <shortlist-footer></shortlist-footer>
+</main>

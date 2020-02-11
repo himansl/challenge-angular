@@ -1,0 +1,17 @@
+@mixin profilePicture {
+  height: 15vh;
+  width: 15vh;
+  border-radius: 50%;
+}
+
+@mixin header-footer-mixin {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  color: $color-text-heading;
+}
+
+@mixin centralizeContent {
+  display: flex;
+  justify-content: center;
+}

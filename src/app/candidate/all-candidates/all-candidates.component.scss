@@ -1,0 +1,60 @@
+@import '../../../styles.scss';
+
+main {
+  display: flex;
+  justify-content: space-between;
+  height: 78vh;
+  width: $complete-width;
+  overflow: auto;
+  overflow-x: hidden;
+
+  & > table {
+    width: $complete-width;
+    height: 20%;
+    tr {
+      color: $color-text-primary;
+
+      &:hover {
+        background-color: $color-row-hover;
+        cursor: pointer;
+      }
+    }
+
+    td {
+      color: $color-text-primary;
+    }
+
+    th.mat-sort-header-sorted {
+      color: $color-black;
+    }
+
+    td.mat-cell {
+      font-size: $viewport-basic;
+    }
+
+    .mat-header-cell {
+      color: $color-black;
+      background-color: $color-row-hover;
+      font-size: $viewport-basic;
+    }
+    & .nameColumn {
+      color: $color-primary;
+      font-weight: 500;
+    }
+  }
+  & > .nothingToDisplay {
+    width: 88%;
+  }
+  & > .sidebar {
+    padding: 0 $viewport-basic;
+
+    & > button {
+      background-color: $color-primary;
+      color: $color-white;
+      margin-right: 10vh;
+      width: $complete-width;
+      margin-top: 0;
+      padding: 1vh;
+    }
+  }
+}

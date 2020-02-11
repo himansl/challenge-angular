@@ -1,0 +1,77 @@
+@import '../../../styles.scss';
+
+.gobackContainer {
+  padding: 0 5%;
+
+  & > span:first-child,
+  fa-icon {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: $color-text-primary;
+  }
+  label {
+    cursor: pointer;
+  }
+}
+
+main {
+  padding: 0 5%;
+  @include centralizeContent;
+  & header {
+    font-size: 1.5rem;
+    margin-bottom: $viewport-basic;
+    text-align: center;
+    color: $color-text-primary;
+  }
+}
+
+.picUpload {
+  @include profilePicture;
+  @include centralizeContent;
+  align-items: center;
+  background-color: $profile-picture-background;
+  margin-bottom: 2vh;
+
+  & > label {
+    cursor: pointer;
+  }
+}
+img {
+  @include profilePicture;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.candidate-field-form {
+  min-width: 20vw;
+  max-width: 30vw;
+  width: $complete-width;
+}
+
+.candidate-field-full-width {
+  width: $complete-width;
+}
+
+.row {
+  display: flex;
+
+  & .phoneCodeClass {
+    width: 20%;
+  }
+
+  & .phoneNumberClass {
+    width: 75%;
+    margin-left: 1vh;
+  }
+}
+
+button {
+  font-size: $viewport-basic;
+  width: $complete-width;
+  height: 5vh;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
