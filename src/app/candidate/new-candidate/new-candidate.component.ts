@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { DataService } from 'src/app/_helpers/data.service';
+import { DataService } from 'src/app/_collaborators/data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { HttpClient } from '@angular/common/http';
+import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'shortlist-new-candidate',
@@ -16,11 +16,10 @@ export class NewCandidateComponent implements OnInit {
   selectedFile = null;
   imageUploaded;
 
-  constructor(
-    private dataService: DataService,
-    private snackbar: MatSnackBar,
-    private http: HttpClient
-  ) {
+  faLongArrowAltLeft = faLongArrowAltLeft;
+  @Output() changeImageEvent = new EventEmitter();
+
+  constructor(private dataService: DataService, private snackbar: MatSnackBar) {
     this.experienceArr = new Array(100);
     this.phoneCodeArr = [+91, +62, +254, +67];
   }
@@ -30,7 +29,10 @@ export class NewCandidateComponent implements OnInit {
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       code: new FormControl('', [Validators.required]),
-      phone: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
+      phone: new FormControl('', [
+        Validators.required,
+        Validators.pattern('^[0-9]{10}$')
+      ]),
       experience: new FormControl(0, [Validators.required, Validators.max(100)]),
       github: new FormControl('', [Validators.required]),
       photo: new FormControl('')
@@ -47,15 +49,19 @@ export class NewCandidateComponent implements OnInit {
     });
   }
 
+  changePicture() {
+    document.getElementById('dp').click();
+  }
+
   submitForm() {
     if (this.imageUploaded) {
       this.newCandidateForm.patchValue({ photo: this.imageUploaded });
     }
-    console.log(this.newCandidateForm.value);
-    this.dataService.saveData(this.newCandidateForm.value);
+    this.dataService.saveData(this.newCandidateForm.value).subscribe();
     this.snackbar.open('Candidate Added !!', '', {
       duration: 2000
     });
+    this.selectedFile = null;
   }
 
   get name() {

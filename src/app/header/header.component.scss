@@ -1,6 +1,5 @@
+@import '../../styles.scss';
+
 h1 {
-  display: flex;
-  justify-content: center;
-  padding: 2rem;
-  color: rgb(23, 23, 206);
+  @include header-footer-mixin;
 }

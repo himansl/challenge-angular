@@ -10,7 +10,7 @@ import { AngularMaterialModule } from './angular-material.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { BackendInterceptor } from './_helpers/backend-interceptor';
+import { BackendInterceptor } from './_collaborators/backend-interceptor';
 
 @NgModule({
   declarations: [

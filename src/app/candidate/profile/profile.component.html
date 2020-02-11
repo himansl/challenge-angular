@@ -14,7 +14,7 @@
 
       <div>
         <fa-icon [icon]="faMobileAlt"></fa-icon>
-        <span>+{{ profileData.phone }}</span>
+        <span>+{{ profileData.code }}-{{ profileData.phone }}</span>
       </div>
       <div>
         <i class="fab fa-github"></i>
@@ -24,7 +24,7 @@
     <hr />
     <div>
       <fa-icon [icon]="faBriefcase"></fa-icon>
-      <span>{{ profileData.experience }}</span>
+      <span> {{ profileData.experience }} years</span>
     </div>
   </div>
 </main>

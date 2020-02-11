@@ -1,24 +1,27 @@
 <div class="gobackContainer">
-  <span [routerLink]="''" matRipple [matRippleCentered]="centered">&larr; Go Back</span>
+  <span [routerLink]="''" matRipple [matRippleCentered]="centered"
+    ><fa-icon [icon]="faLongArrowAltLeft"></fa-icon> GO BACK</span
+  >
   <span></span>
 </div>
 
 <main>
   <section>
     <header>Add Candidate</header>
-    <form [formGroup]="newCandidateForm" class="candidate-field-form">
-      <label
-        *ngIf="!selectedFile"
-        class="picUpload"
-        id="picUploadLabel"
-        (click)="onUpload()"
-        for="dp"
-      >
-        Upload
-      </label>
-      <img *ngIf="selectedFile" for="dp" id="picUploadImage" />
-      <input type="file" name="dp" id="dp" (change)="onFileSelected($event)" hidden />
 
+    <form [formGroup]="newCandidateForm" class="candidate-field-form">
+      <div class="picUpload">
+        <label *ngIf="!selectedFile" id="picUploadLabel" for="dp">
+          Upload
+        </label>
+        <img
+          *ngIf="selectedFile"
+          (click)="changePicture()"
+          for="dp"
+          id="picUploadImage"
+        />
+        <input type="file" name="dp" id="dp" (change)="onFileSelected($event)" hidden />
+      </div>
       <mat-form-field class="candidate-field-full-width">
         <input matInput formControlName="name" placeholder="Enter name" />
         <mat-error *ngIf="name.touched && name.hasError('required')"
@@ -39,7 +42,9 @@
       <div class="row">
         <mat-form-field class="phoneCodeClass">
           <mat-select formControlName="code">
-            <mat-option *ngFor="let code of phoneCodeArr" [value]="code"> ({{ code }}) </mat-option>
+            <mat-option *ngFor="let code of phoneCodeArr" [value]="code">
+              ({{ code }})
+            </mat-option>
           </mat-select>
           <mat-error *ngIf="code.touched && code.hasError('required')"
             >*This is a required field.</mat-error
@@ -80,6 +85,7 @@
       </mat-form-field>
 
       <button
+        type="reset"
         mat-raised-button
         [disabled]="newCandidateForm.invalid"
         (click)="submitForm()"

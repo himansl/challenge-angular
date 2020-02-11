@@ -4,6 +4,7 @@ import { NewCandidateComponent } from './new-candidate.component';
 import { Route, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from 'src/app/angular-material.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const routes: Route[] = [
   {
@@ -14,6 +15,12 @@ const routes: Route[] = [
 
 @NgModule({
   declarations: [NewCandidateComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), ReactiveFormsModule, AngularMaterialModule]
+  imports: [
+    CommonModule,
+    FontAwesomeModule,
+    RouterModule.forChild(routes),
+    ReactiveFormsModule,
+    AngularMaterialModule
+  ]
 })
 export class NewCandidateModule {}

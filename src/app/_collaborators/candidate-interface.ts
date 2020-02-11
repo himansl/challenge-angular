@@ -3,6 +3,7 @@ export interface CandidateElement {
   candidateId: number;
   name: string;
   email: string;
+  code: number;
   phone: number;
   experience: number;
   photo: string;

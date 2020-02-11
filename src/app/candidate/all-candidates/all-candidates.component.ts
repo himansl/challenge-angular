@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { DataService } from 'src/app/_helpers/data.service';
+import { DataService } from 'src/app/_collaborators/data.service';
 import { SelectionModel } from '@angular/cdk/collections';
-import { CandidateElement } from 'src/app/_helpers/candidate-interface';
+import { CandidateElement } from 'src/app/_collaborators/candidate-interface';
 import { MatDialog } from '@angular/material/dialog';
 import { ProfileComponent } from '../profile/profile.component';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -38,14 +38,16 @@ export class AllCandidatesComponent implements OnInit {
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   ngOnInit() {
-    let data = this.dataService.getData();
-    this.candidateData = new MatTableDataSource<CandidateElement>(data);
-    if (data.length > 0) {
-      this.displayNothing = false;
-    } else {
-      this.displayNothing = true;
-    }
-    this.candidateData.sort = this.sort;
+    this.dataService.getData().subscribe(data => {
+      console.log(data);
+      if (data.length > 0) {
+        this.displayNothing = false;
+      } else {
+        this.displayNothing = true;
+      }
+      this.candidateData = new MatTableDataSource<CandidateElement>(data);
+      this.candidateData.sort = this.sort;
+    });
   }
 
   isAllSelected() {
