@@ -20,6 +20,10 @@ main {
       }
     }
 
+    td {
+      color: $color-text-primary;
+    }
+
     th.mat-sort-header-sorted {
       color: $color-black;
     }
