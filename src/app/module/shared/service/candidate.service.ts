@@ -40,5 +40,4 @@ export class CandidateService {
   updateCandidate(candidateupdate) {
     return this.http.post(this.mockUrl + '/' + candidateupdate.id, candidateupdate, headerOption);
   }
-
 }
