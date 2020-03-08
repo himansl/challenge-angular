@@ -1,0 +1,58 @@
+<div>
+  <div class="inlineIcon">
+    <mat-icon aria-hidden="false" aria-label="Example keyboard_backspace icon">keyboard_backspace</mat-icon>
+    <a class="alignbtn" color="warm" (click)="goBack();" type="submit">
+      Go Back</a>
+    <span class="aligntext">Add Candidate</span>
+  </div>
+  <div class="example-container">
+    <div class="form-container">
+      <form [formGroup]="candidateForm" (submit)="submit(candidateForm.value)">
+        <div class="image-upload">
+          <label for="file-input">
+            <div class="circle" (click)="fileInput.click()">UPLOAD</div>
+          </label>
+          <input id="file-input" type='file' #fileInput (change)="uploadFile($event)" formControlName="photo" />
+        </div>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> Name
+          </mat-label>
+          <input matInput formControlName="name" required>
+          <mat-error *ngIf="candidateForm.controls.name.touched && candidateForm.controls.name.invalid">
+            <span *ngIf="candidateForm.controls.name.errors?.required">This field is mandatory.</span>
+            <span *ngIf="candidateForm.controls.name.errors?.pattern">This field is invalid.</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> E-mail
+          </mat-label>
+          <input matInput formControlName="email" required>
+          <mat-error *ngIf="candidateForm.controls.email.touched && candidateForm.controls.email.invalid">
+            <span *ngIf="candidateForm.controls.email.errors?.required">Emailis mandatory.</span>
+            <span *ngIf="candidateForm.controls.email.errors?.pattern">Email is invalid.</span>
+          </mat-error>
+        </mat-form-field>
+        <div class="aligninline">
+          <mat-form-field class="form-field reduceSize" appearance="outline">
+            <mat-label>+91</mat-label>
+            <input matInput type="number" formControlName="countryCode">
+          </mat-form-field>
+          <mat-form-field class="form-field alignPhone" appearance="outline">
+            <mat-label> Phone
+            </mat-label>
+            <input matInput formControlName="phone" type="number" required>
+            <mat-error *ngIf="candidateForm.controls.phone.touched && candidateForm.controls.phone.invalid">
+              <span *ngIf="candidateForm.controls.phone.errors?.required">Phone number is mandatory.</span>
+              <span *ngIf="candidateForm.controls.phone.errors?.pattern">Phone number is invalid.</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> Github
+          </mat-label>
+          <input matInput formControlName="github" type="text">
+        </mat-form-field>
+        <button mat-raised-button class="btnbackground" type="submit" [disabled]="!candidateForm.valid">Create</button>
+      </form>
+    </div>
+  </div>
