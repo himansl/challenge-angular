@@ -53,7 +53,6 @@ export class CandidatesListComponent implements OnInit {
 
   }
   openAlertDialog(data) {
-    console.log(data);
     const dialogRef = this.dialog.open(CandidateprofileComponent, {
       data: {
         message: data,

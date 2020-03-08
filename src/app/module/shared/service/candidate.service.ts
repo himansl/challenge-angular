@@ -35,7 +35,6 @@ export class CandidateService {
     return this.http.get('http://localhost:3001/candidates');
   }
   createCandidate(candidateva) {
-    console.log(candidateva);
     return this.http.post(this.mockUrl, candidateva);
   }
   updateCandidate(candidateupdate) {
