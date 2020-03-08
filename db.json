@@ -1,17 +1,113 @@
 {
-    "candidates": [
-        {
-            "id": 1,
-            "candidateId": 1,
-            "name": "Himan",
-            "email": "himan@abc.xyz",
-            "phone": 1234567890,
-            "experience": 4.5,
-            "photo": "assets/profile_pic_default.jpg",
-            "github": "https://www.github.com/him123"
-        },
-        {
-            "id": 2
-        }
-    ]
+  "candidates": [
+    {
+      "id": 1,
+      "candidateId": 1,
+      "name": "Himan",
+      "email": "himan@abc.xyz",
+      "phone": 1234567890,
+      "experience": 4.5,
+      "photo": "assets/profile_pic_default.jpg",
+      "github": "https://www.github.com/him123"
+    },
+    {
+      "id": 2,
+      "candidateId": 1,
+      "name": "Dhoni",
+      "email": "dhoni@abc.xyz",
+      "phone": 9876543210,
+      "experience": 4.6,
+      "photo": "assets/profile_pic_default.jpg",
+      "github": "https://www.github.com/him123"
+    },
+    {
+      "photo": null,
+      "name": "Anitha",
+      "email": "boyidianitha@gmail.com",
+      "phone": 9492370878,
+      "github": "github/anitha",
+      "id": 3
+    },
+    {
+      "photo": null,
+      "name": "qwertyqwerty",
+      "email": "boyidiv@gmail.com",
+      "countryCode": null,
+      "phone": 9492370878,
+      "github": "jhgaigfuighfuiwg",
+      "id": 4
+    },
+    {
+      "photo": null,
+      "name": "asdf",
+      "email": "asdf@gmail.com",
+      "countryCode": null,
+      "phone": 9492370878,
+      "github": "github",
+      "id": 5
+    },
+    {
+      "photo": null,
+      "name": "Vineetha",
+      "email": "boyidivinitha@gmail.com",
+      "countryCode": null,
+      "phone": 9492370878,
+      "github": "github/vinny",
+      "id": 6
+    },
+    {
+      "photo": null,
+      "name": "Anitha",
+      "email": "boyidianitha@gmail.com",
+      "countryCode": null,
+      "phone": 9492370878,
+      "github": "github/anitha",
+      "id": 7
+    },
+    {
+      "photo": null,
+      "name": "qwertyqwerty",
+      "email": "boyidiv@gmail.com",
+      "countryCode": null,
+      "phone": 9123456780,
+      "github": "vineethagit",
+      "id": 8
+    },
+    {
+      "photo": null,
+      "name": "Venki",
+      "email": "vineethavenki@gmail.com",
+      "countryCode": null,
+      "phone": 9177277305,
+      "github": "github/venki",
+      "id": 9
+    },
+    {
+      "photo": null,
+      "name": "Ratnam",
+      "email": "ratnam@gmail.com",
+      "countryCode": null,
+      "phone": 9871234561,
+      "github": "github/ratnam",
+      "id": 10
+    },
+    {
+      "photo": null,
+      "name": "Srinu",
+      "email": "boyidisrinu@gmail.com",
+      "countryCode": null,
+      "phone": 9876123411,
+      "github": "github/dad",
+      "id": 11
+    },
+    {
+      "photo": null,
+      "name": "Lakshmi",
+      "email": "lakshmi@gmail.com",
+      "countryCode": null,
+      "phone": 9492370879,
+      "github": "github/lakshmi",
+      "id": 12
+    }
+  ]
 }

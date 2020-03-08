@@ -1,0 +1,69 @@
+.example-card {
+  max-width: 400px;
+}
+.resizeImg {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+}
+.alignProfile {
+  display: flex !important;
+}
+.alignName {
+  padding-top: 24px;
+}
+.paddingleft10 {
+  padding-left: 10px;
+}
+.paddingright10 {
+  padding-right: 10px;
+}
+.paddingtop10 {
+  padding-top: 10px;
+}
+.resizeCancel {
+  min-height: 0px !important;
+  padding: 0px !important;
+  cursor: pointer;
+}
+.resizeCancel :focus {
+  outline: 0px !important;
+}
+.paddingtop3 {
+  padding-top: 3px;
+}
+.paddingtop10 {
+  padding-top: 10px;
+}
+.paddingtop18 {
+  padding-top: 18px;
+}
+.paddingtop8 {
+  padding-top: 8px;
+}
+.paddingtop5 {
+  padding-top: 5px !important;
+}
+.paddingtop2 {
+  padding-top: 2px;
+}
+.alignProfileDescription {
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+.iconColor {
+  color: #91a3ae;
+}
+.fontFamily {
+  color: #253e53;
+}
+.textColor {
+  font-size: 12px;
+}
+.alignDialog {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}

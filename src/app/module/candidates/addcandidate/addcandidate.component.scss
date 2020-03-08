@@ -1,0 +1,67 @@
+.example-container {
+  text-align: center;
+}
+
+.form-container {
+  display: inline-block;
+  margin: auto;
+  width: 30%;
+}
+
+.form-field {
+  display: block;
+}
+.btnbackground {
+  background-color: #27c1ce !important;
+  margin: auto;
+  width: 100%;
+}
+.aligntext {
+  margin: auto;
+  width: 30%;
+  padding-left: 45px;
+}
+.inlineIcon {
+  display: flex !important;
+  padding-bottom: 30px;
+  padding-top: 15px;
+}
+.alignbtn {
+  padding-top: 3px;
+}
+.alignImg {
+  height: 50px;
+  width: 50px;
+  float: left;
+  padding-bottom: 10px;
+}
+.image-upload > input {
+  display: none !important;
+}
+
+.image-upload {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #91a3ae;
+  color: black;
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+.image-upload .circle {
+  padding-top: 18px;
+}
+.paddingtop10 {
+  padding-top: 10px;
+}
+.aligninline {
+  display: flex;
+}
+.reduceSize {
+    width: 15% !important;
+}
+.alignPhone {
+    width: 80% !important;
+    padding-left: 15px !important;
+}
