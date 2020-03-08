@@ -1,0 +1,37 @@
+<mat-dialog-content class="alignDialog">
+    <mat-dialog-actions class="resizeCancel" align="end">
+        <i class="material-icons iconColor" mat-dialog-close tabindex="-1">clear</i>
+    </mat-dialog-actions>
+    <div class="alignProfile paddingtop8">
+        <div class="alignProfile paddingtop18">
+            <img mat-card-avatar class="resizeImg" src="../../../../assets/profile_pic_default.png" alt="">
+        </div>
+        <div class="paddingleft10">
+            <div class="alignName paddingleft10"><span class="alignName fontFamily">{{message.name | titlecase}}</span>
+            </div>
+            <div class="alignProfile paddingtop8">
+                <div><i class="material-icons iconColor">
+                        smartphone
+                    </i></div>
+                <div class="paddingleft10 paddingright10 paddingtop5 textColor"> +91 {{message.phone}}</div>
+                <div class="alignProfile">
+                    <i class="material-icons iconColor">
+                        email
+                    </i>
+                    <div class="paddingleft10 paddingright10 paddingtop3 textColor">{{message.email}}</div>
+                </div>
+            </div>
+            <div class="alignProfile">
+                <i class="material-icons iconColor paddingtop5">face</i>
+                <div class="paddingtop8 paddingleft10 textColor">{{message.github}}</div>
+            </div>
+            <br>
+            <hr>
+            <div class="alignProfile"><i class="material-icons iconColor">
+                    work
+                </i>
+                <div class="paddingleft10 paddingtop5 textColor">{{message.experience || 0}} years</div>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
